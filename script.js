@@ -85,7 +85,7 @@ console.log(hourlyForecast);
             otherHourForcast += `
             <div class="weather-forecast-item">
                <div class="time">Now</div>
-                <img src="http://openweathermap.org/img/wn//${hour.weather[0].icon}@2x.png" alt="weather icon" class="w-icon"> 
+                <img src="https://openweathermap.org/img/wn//${hour.weather[0].icon}@2x.png" alt="weather icon" class="w-icon"> 
                 <div class="temp">${hour.temp}&#176;C</div>
                 </div>`;
 
@@ -93,7 +93,7 @@ console.log(hourlyForecast);
             otherHourForcast += `
             <div class="weather-forecast-item">
                 <div class="time">${window.moment(hour.dt*1000).format('HH:mm a')}</div>
-                <img src="http://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png" alt="weather icon" class="w-icon">
+                <img src="https://openweathermap.org/img/wn/${hour.weather[0].icon}@2x.png" alt="weather icon" class="w-icon">
                   <div class="temp">${hour.temp}&#176;C</div>
             </div> `;
         }
@@ -113,7 +113,7 @@ function  OtherDayForecast(data){
         otherDayForcast += `
         <div class="weather-forecast-item">
             <div class="day">Today</div>
-            <img src="http://openweathermap.org/img/wn//${day.weather[0].icon}@2x.png" alt="weather icon" class="w-icon"> 
+            <img src="https://openweathermap.org/img/wn//${day.weather[0].icon}@2x.png" alt="weather icon" class="w-icon"> 
                <div class="temp night">${day.temp.night}&#176;C</div>
                 <div class="temp day">${day.temp.day}&#176;C</div>
             </div>`;
@@ -122,7 +122,7 @@ function  OtherDayForecast(data){
          otherDayForcast += `
         <div class="weather-forecast-item">
             <div class="day">${window.moment(day.dt*1000).format('dddd')}</div>
-            <img src="http://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="weather icon" class="w-icon">
+            <img src="https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" alt="weather icon" class="w-icon">
             <div class="temp night">${day.temp.night}&#176;C</div>
             <div class="temp day">${day.temp.day}&#176;C</div>
         </div> `;
@@ -176,7 +176,7 @@ function fetchWeather(city ,coordsAPI){
 
 
 function fetchCity(city){
-    let url=`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${API_KEY}`;
+    let url=`https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${API_KEY}`;
     fetch(url).then(res =>res.json()).then(coordsAPI => fetchWeather(city ,coordsAPI));
 }
 
@@ -188,7 +188,7 @@ searchInput.addEventListener("keyup",e=>{
 })
 
 async function displayLocation(latitude,longitude){
-  const GEOCODING_URL=`http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=5&appid=${API_KEY}`;
+  const GEOCODING_URL=`https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=5&appid=${API_KEY}`;
   const response=await fetch(GEOCODING_URL);
   const data = await response.json();
   if(data.length>0){
