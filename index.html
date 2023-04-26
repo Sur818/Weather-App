@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/1e190727d8.js" crossorigin="anonymous"></script>
+    <title>Weather App || Suraj singh</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <i class="fa-solid fa-bars"></i>
+        <h4>Weather</h4>
+          <!-- Trigger the modal with a search btn -->
+        <div class="serach-box btn btn-info btn-lg" type="button"  data-toggle="modal" data-target="#myModal">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+    </header>
+    <div class="line"></div>
+    <section class="current-weather">
+      <!-------data will come from js----------->
+</section>
+
+<section class="hourly-weather">
+    <h4>Hourly Forecast</h4>
+    <div class="weather-forecast" id="hour-weather-forecast">
+        <!-------data will come from js----------->
+    </div>
+  
+</section>
+<section class="day-weather overlay">
+       <h4>7 Day Forecast</h4>
+       <i class="fa-solid fa-xmark"></i>
+    <div class="weather-forecast" id="day-weather-forecast">
+         <!-- -----data will come from js--------- -->
+    </div>
+  
+</section>
+<div class="line"></div>
+<footer>
+<div class="column feels-like">
+    <i class="fa-solid fa-temperature-half"></i>
+    <div class="details">
+       <!------------------>
+    </div>
+</div>
+<div class="column humidity">
+    <i class="fa-sharp fa-solid fa-droplet"></i>
+    <div class="details">
+        
+    </div>
+</div>
+</footer>
+<!------------------Modal Boostrap----------------------------------------->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Enter City Name</h4>
+          </div>
+          <div class="modal-body">
+            <input type="text" name="" class="input-box" id="input-box" placeholder="Enter City Name">
+           <div id="suggestions"></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+<!---------------------------------------------------------------------------------->
+  
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.js"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script> 
+<script src="script.js"></script>
+</body>
+</html>
